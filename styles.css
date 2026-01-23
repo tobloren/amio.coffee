@@ -1,0 +1,162 @@
+/* Header */
+
+p {
+    font-family: "Montserrat";
+  }
+  
+  h1, h2, h3 {
+    font-family: "Shadows Into Light Two";
+  }
+  
+  h1 {
+    color: #A27B5C;
+    padding: 0% 15% 3%;
+    font-family: "Shadows Into Light Two";
+  }
+  
+  a {
+    text-decoration: none;
+    color: #3F4E4F;
+  }
+  
+  /* Navigatin Bar */
+  
+  .navbar {
+    padding: 0;
+  }
+  
+  .navbar-brand {
+    font-family: "Montserrat";
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #DCD7C9;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .navbar-brand:hover {
+    color: #2C3639;
+  }
+  
+  .nav-item {
+    padding: 0 18px;
+  }
+  
+  .nav-link {
+    font-size: 1.2rem;
+    font-family: "Montserrat";
+    color: #DCD7C9;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .nav-link:hover {
+    color: #2C3639;
+  }
+  
+  .icon {
+    color: #3F4E4F;
+    margin-bottom: 1rem;
+  }
+  
+  .icon:hover {
+    color: #2C3639;
+  }
+  
+  #title .container-fluid {
+    padding: 1% 15% 1%;
+    text-align: center;
+    background-color: #2C3639;
+    color: #DCD7C9;
+  }
+  
+  /* Features */
+  
+  #amio .container-fluid {
+    padding: 3% 15% 3%;
+    text-align: center;
+    background-color: #3F4E4F;
+    color: #DCD7C9;
+  }
+  
+  .coffeetitelpage-image {
+    width: 50%;
+    margin:0 0 2% 0;
+    border-radius: 8px;
+  }
+  
+  #Blog .container-fluid {
+    padding: 3% 15% 3%;
+    text-align: center;
+    background-color: #DCD7C9;
+    color: #3F4E4F;
+  }
+
+  .Brisbane-image {
+    width: 50%;
+    margin:0 0 2% 0;
+    border-radius: 8px;
+  }
+
+  .image {
+    width: 100%;
+    margin:0 0 2% 0;
+    border-radius: 8px;
+  }
+
+  .btn {
+    background-color: #3F4E4F;
+    border-color: #2C3639;
+    color: #DCD7C9;
+  }
+
+  .btn:hover {
+    background-color: #A27B5C;
+    border-color: #A27B5C;
+    color: #ffffff; 
+  }
+
+  /* Blog Artikel Strukturierung */
+
+  .blog-container {
+    padding: 20px;
+  }
+  .blog-image {
+    padding: 10px;
+  }
+  .blog-text {
+    padding: 20px;
+  }
+
+  #About .container-fluid {
+    padding: 3% 15% 3%;
+    text-align: center;
+    background-color: #3F4E4F;
+    color: #DCD7C9;
+  }
+
+  .profile-img {
+    width: 25%;
+    margin:0 0 2% 0;
+    border-radius: 25px;
+  }
+  
+  
+  /* Footer */
+  
+  #footer .container-fluid {
+    padding: 1% 15% 1%;
+    text-align: center;
+    background-color: #2C3639;
+    color: #DCD7C9;
+  }
+  
+  .social-media {
+    padding: 0 0 0 2%;
+    color: #A27B5C;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .social-media:hover {
+    color: #A27B5C;
+  }
+  
