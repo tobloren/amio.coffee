@@ -1,25 +1,25 @@
 [
-    {
-        "city": "brisbane",
-        "title": "Brisbane – Queensland/Australia",
-        "image": "images/Brisbane.jpg",
-        "intro": "Welcome to my 1st blog article, where we journey through the vibrant coffee culture of Brisbane. If you’ve ever found yourself longing for that perfect cup of Joe while basking in the warm, Australian sunshine, then you’re in the right place. In this series, I’ll be your guide through Brisbane's bustling coffee scene, uncovering the hidden gems and must-visit spots. We’ll explore everything from trendy cafes to cosy, off-the-beaten-path haunts that serve up some of the best brews in town. And speaking of favourites, if you haven’t yet had the pleasure of tasting a cup from Bear Bones, you’re in for a real treat. But that's just one of the many incredible coffee experiences awaiting you here. So, grab your cup, settle in, and let's dive into the rich and aromatic world of Brisbane’s coffee culture. Brisbane, the sun-drenched jewel of Queensland, isn't just famed for its stunning landscapes and vibrant culture, but also for its burgeoning coffee scene. For all you caffeine aficionados out there, here's a guide to three must-visit coffee havens in Brisbane that'll elevate your coffee journey.",
-        "content": [
-            {
-                "subtitle": "Industry Beans – Newstead",
-                "image": "images/IndustryBeans.jpg",
-                "text": "Nestled in the heart of Newstead, Industry Beans is a must-visit for coffee enthusiasts. Known for roasting their beans in small batches, this cafe boasts three roasteries across Australia, each with its unique espresso blend. The Brisbane roastery, named Newstead, produces a blend that’s both complex and inviting. Whether you’re a seasoned coffee lover or a curious newcomer, Industry Beans provides a refined and memorable coffee experience that's bound to impress."
-            },
-            {
-                "subtitle": "Edward Cafe – Brisbane CBD",
-                "image": "images/Edward.jpg",
-                "text": "Situated in the bustling Central Business District, Edward Cafe is a gem for both coffee lovers and foodies alike. Besides serving up outstanding coffee, this cafe offers delicious sandwiches that make for a perfect lunch break or a mid-afternoon snack. The friendly atmosphere and prime location make it an ideal spot to unwind and indulge in some of Brisbane’s finest brews and bites."
-            },
-            {
-                "subtitle": "Bear Bones Coffee – Fortitude Valley",
-                "image": "images/BearBones.jpg",
-                "text": "A visit to Bear Bones Coffee in Fortitude Valley is a must for those who appreciate the art of coffee roasting. In the summer months, they roast their beans early in the morning before the heat sets in, ensuring the freshest flavours. Their impressive 50 kg Probat roaster will soon be complemented by two smaller roasters, enhancing their roasting capabilities. Regular cuppings ensure quality control, making each cup a testament to their dedication. One of the highlights at Bear Bones is the Barista Breakfast, which includes an espresso, a batch brew, and a flat white, served with either still or sparkling water. The batch brew from Honduras is a sensation, while the Papua New Guinea espresso is remarkably fruity and complex, showcasing the diverse profiles they offer."
-            }
-        ]
-    }
+  {
+    "city": "brisbane",
+    "title": "Brisbane – Queensland/Australia",
+    "image": "images/Brisbane.jpg",
+    "intro": "Welcome to my 1st blog article, where we journey through the vibrant coffee culture of Brisbane.\n\nIf you’ve ever found yourself longing for that perfect cup of Joe while basking in the warm Australian sunshine, then you’re in the right place.\n\nIn this series, I’ll be your guide through Brisbane's bustling coffee scene, uncovering hidden gems and must-visit spots.\n\nSo, grab your cup, settle in, and let's dive into the rich and aromatic world of Brisbane’s coffee culture.",
+    "content": [
+      {
+        "subtitle": "Industry Beans – Newstead",
+        "image": "images/IndustryBeans.jpg",
+        "text": "Nestled in the heart of Newstead, Industry Beans is a must-visit for coffee enthusiasts.\n\nKnown for roasting their beans in small batches, this cafe boasts three roasteries across Australia, each with its unique espresso blend.\n\nWhether you’re a seasoned coffee lover or a curious newcomer, Industry Beans provides a refined and memorable coffee experience."
+      },
+      {
+        "subtitle": "Edward Cafe – Brisbane CBD",
+        "image": "images/Edward.jpg",
+        "text": "Situated in the bustling Central Business District, Edward Cafe is a gem for both coffee lovers and foodies alike.\n\nBesides serving outstanding coffee, this cafe offers delicious sandwiches that make for a perfect lunch break or mid-afternoon snack.\n\nThe friendly atmosphere and prime location make it an ideal spot to unwind and indulge in some of Brisbane’s finest brews and bites."
+      },
+      {
+        "subtitle": "Bear Bones Coffee – Fortitude Valley",
+        "image": "images/BearBones.jpg",
+        "text": "A visit to Bear Bones Coffee in Fortitude Valley is a must for those who appreciate the art of coffee roasting.\n\nIn the summer months, they roast their beans early in the morning before the heat sets in, ensuring the freshest flavours.\n\nOne of the highlights at Bear Bones is the Barista Breakfast, which includes an espresso, a batch brew, and a flat white.\n\nThe batch brew from Honduras is a sensation, while the Papua New Guinea espresso is remarkably fruity and complex."
+      }
+    ]
+  }
 ]

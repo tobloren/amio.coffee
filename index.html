@@ -34,42 +34,40 @@
 
     <!-- Navbar -->
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
-      <div class="container-fluid">
-        <a class="navbar-brand nav-link active" aria-current="page" href="index.html">
-          <img src="images/amio.coffee.jpg" alt="Logo" width="120" height="100" class="d-inline-block align-text-top">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="#amio">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#Blog">Blog</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#About">About</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+<nav class="navbar navbar-expand-lg custom-nav sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand nav-link active" aria-current="page" href="index.html">
+      <img src="images/amio.coffee.jpg" alt="Logo" width="120" height="100" class="d-inline-block align-text-top">
+    </a>
+
+    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="#amio">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#Blog">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="#About">About</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
   </section>
 
   <!-- Features -->
 
   <section id="amio">
-    <div class="container-fluid">
+    <div class="container-fluid section">
       <div class="row">
         <h1>amio coffee – Your coffee travel adventures</h1>
         <div class="feature-box col-12 p-2 p-sm-3 p-md-4">
           <img class="coffeetitelpage-image" src="images/coffeetitelpage.jpg" loading="lazy">
         </div>
-        <div class="feature-box container-fluid p-2 p-sm-3 p-md-4">
+        <div class="feature-box container-fluid section p-2 p-sm-3 p-md-4">
           <h2>G’day, coffee lovers! ☕️</h2>
           <p>Welcome to Amio Coffee — your curated guide to exceptional coffee around the world.</p>
           <p>I’m Tobias, a coffee‑driven traveler exploring cafés, roasters, and hidden gems across the globe.</p>
@@ -84,20 +82,20 @@
   </section>
 
   <section id="Blog">
-    <div class="container-fluid"> 
+    <div class="container-fluid section"> 
       <h1>Blog</h1>
       <div id="blog"></div>
     </div>
   </section>
 
   <section id="About">
-    <div class="container-fluid">
+    <div class="container-fluid section">
       <div class="row">
         <h1>About</h1>
         <div class="feature-box col-12">
           <img class="profile-img" src="images/tobias.jpg" alt="profile-img">
         </div>
-        <div class="feature-box container-fluid p-2 p-sm-3 p-md-4">
+        <div class="feature-box container-fluid section p-2 p-sm-3 p-md-4">
           <p>I’m Tobias, an avid traveller and coffee enthusiast exploring the world one café at a time. Join me on my
             journey to uncover the best coffee spots and experience the rich stories behind each cup.</p>
         </div>
@@ -109,15 +107,15 @@
   <!-- Footer -->
 
   <footer id="footer">
-    <div class="container-fluid">
+    <div class="container-fluid section">
       <div class="row">
-        <div class="container-fluid">
+        <div class="container-fluid section">
           <a class="social-media fa-brands fa-instagram" href="https://www.instagram.com/tobloren/" target="_blank"></a>
           <a class="social-media fa-solid fa-envelope" href="mailto:mailto:info@amio.coffee"></a>
           <a class="social-media" href="datenschutz.html">Datenschutz</a>
           <a class="social-media" href="impressum.html">Impressum</a>
         </div>
-        <div class="container-fluid">
+        <div class="container-fluid section">
           <p>&copy; 2025 amio coffee</p>
         </div>
       </div>
@@ -126,26 +124,51 @@
 
   <!-- Script -->
 
-  <script>
+<script>
   fetch("posts.json")
     .then(res => res.json())
     .then(posts => {
       const container = document.getElementById("blog");
 
       posts.forEach(post => {
+        // Intro in Absätze umwandeln
+        const introParagraphs = post.intro
+          .split("\n\n")
+          .map(p => `<p>${p}</p>`)
+          .join("");
+
+        // Content-Abschnitte formatieren
+        const contentHTML = post.content
+          .map(item => {
+            const contentParagraphs = item.text
+              .split("\n\n")
+              .map(p => `<p>${p}</p>`)
+              .join("");
+
+            return `
+              <h3>${item.subtitle}</h3>
+              <img src="${item.image}" class="image" loading="lazy">
+              <div class="blog-text">
+                ${contentParagraphs}
+              </div>
+            `;
+          })
+          .join("");
+
+        // Gesamten Blog-Artikel einfügen
         container.innerHTML += `
           <div class="blog-container">
             <img src="${post.image}" class="image" loading="lazy">
             <h2>${post.title}</h2>
-            <p>${post.intro}</p>
+
+            <div class="blog-text">
+              ${introParagraphs}
+            </div>
+
             <button class="btn btn-primary" onclick="toggle('${post.city}')">Dive in</button>
 
             <div id="${post.city}" style="display:none; margin-top:20px;">
-              ${post.content.map(item => `
-                <h3>${item.subtitle}</h3>
-                <img src="${item.image}" class="image" loading="lazy">
-                <p>${item.text}</p>
-              `).join("")}
+              ${contentHTML}
             </div>
           </div>
         `;
@@ -157,6 +180,7 @@
     el.style.display = el.style.display === "none" ? "block" : "none";
   }
 </script>
+
 
 
 </body>
