@@ -84,103 +84,9 @@
   </section>
 
   <section id="Blog">
-    <div class="container-fluid">
-      <div class="row">
-        <h1>Blog</h1>
-        <div class="feature-box col-12 p-2 p-sm-3 p-md-4">
-          <img class="Brisbane-image" src="images/Brisbane.jpg" loading="lazy">
-        </div>
-        <div class="feature-box container-fluid p-2 p-sm-3 p-md-4">
-          <h2>Brisbane - Queensland/Australia</h2>
-          <p>Welcome to my 1st blog article, where we journey through the vibrant coffee culture of Brisbane. If you’ve
-            ever found yourself longing for that perfect cup of Joe while basking in the warm, Australian sunshine, then
-            you’re in the right place.</p>
-          <p>In this series, I’ll be your guide through Brisbane's bustling coffee scene, uncovering the hidden gems and
-            must-visit spots. We’ll explore everything from trendy cafes to cosy, off-the-beaten-path haunts that serve
-            up some of the best brews in town.</p>
-          <p>And speaking of favourites, if you haven’t yet had the pleasure of tasting a cup from Bear Bones, you’re in
-            for a real treat. But that's just one of the many incredible coffee experiences awaiting you here. So, grab
-            your cup, settle in, and let's dive into the rich and aromatic world of Brisbane’s coffee culture.</p>
-        </div>
-
-        <div>
-          <button class="btn btn-primary" onclick="showArticle()">Dive in</button>
-
-          <!-- Complete Blog Article -->
-
-
-          <div class="container-fluid p-2 p-sm-3 p-md-4 blog-container" id="blogArticle" style="display: none;">
-            <div class="row">
-              <h2>The Full Blog Article</h2>
-              <p>Brisbane, the sun-drenched jewel of Queensland, isn't just famed for its stunning landscapes and
-                vibrant culture, but also for its burgeoning coffee scene. For all you caffeine aficionados out there,
-                here's a guide to three must-visit coffee havens in Brisbane that'll elevate your coffee journey.</p>
-            </div>
-
-            <div class="row">
-              <h3>Industry Beans - Newstead</h3>
-              <div class="col-md-3 blog-image">
-                <img class="image" src="images/IndustryBeans.jpg" loading="lazy">
-              </div>
-
-              <div class="col-md-9 text-center blog-text">
-
-                <p>Nestled in the heart of Newstead, Industry Beans is a must-visit for coffee enthusiasts. Known for
-                  roasting their beans in small batches, this cafe boasts three roasteries across Australia, each with
-                  its
-                  unique espresso blend. The Brisbane roastery, named Newstead, produces a blend that’s both complex and
-                  inviting. Whether you’re a seasoned coffee lover or a curious newcomer, Industry Beans provides a
-                  refined and memorable coffee experience that's bound to impress.</p>
-              </div>
-            </div>
-
-            <div class="row">
-              <h3>Edward Cafe - Brisbane CBD</h3>
-              <div class="col-md-3 blog-image">
-                <img class="image" src="images/Edward.jpg" loading="lazy">
-              </div>
-
-              <div class="col-md-9 text-center blog-text">
-
-                <p>Situated in the bustling Central Business District, Edward Cafe is a gem for both coffee lovers and
-                  foodies
-                  alike. Besides serving up outstanding coffee, this cafe offers delicious sandwiches that make for a
-                  perfect
-                  lunch break or a mid-afternoon snack. The friendly atmosphere and prime location make it an ideal spot
-                  to unwind
-                  and indulge in some of Brisbane’s finest brews and bites.</p>
-              </div>
-
-              <div class="row">
-                <h3>Bear Bones Coffee - Fortitude Valley</h3>
-                <div class="col-md-3 blog-image">
-                  <img class="image" src="images/BearBones.jpg" loading="lazy">
-                </div>
-
-                <div class="col-md-9 text-center blog-text">
-                  
-                  <p>A visit to Bear Bones Coffee in Fortitude Valley is a must for those who appreciate the art of
-                    coffee roasting.
-                    In the summer months, they roast their beans early in the morning before the heat sets in, ensuring
-                    the freshest
-                    flavours. Their impressive 50 kg Probat roaster will soon be complemented by two smaller roasters,
-                    enhancing
-                    their roasting capabilities. Regular cuppings ensure quality control, making each cup a testament to
-                    their
-                    dedication.</p>
-                  <p>One of the highlights at Bear Bones is the Barista Breakfast, which includes an espresso, a batch
-                    brew, and a
-                    flat white, served with either still or sparkling water. The batch brew from Honduras is a
-                    sensation, while the
-                    Papua New Guinea espresso is remarkably fruity and complex, showcasing the diverse profiles they
-                    offer.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="container-fluid"> 
+      <h1>Blog</h1>
+      <div id="blog"></div>
     </div>
   </section>
 
@@ -221,10 +127,37 @@
   <!-- Script -->
 
   <script>
-    function showArticle() {
-      document.getElementById('blogArticle').style.display = 'block';
-    }
-  </script>
+  fetch("posts.json")
+    .then(res => res.json())
+    .then(posts => {
+      const container = document.getElementById("blog");
+
+      posts.forEach(post => {
+        container.innerHTML += `
+          <div class="blog-container">
+            <img src="${post.image}" class="image" loading="lazy">
+            <h2>${post.title}</h2>
+            <p>${post.intro}</p>
+            <button class="btn btn-primary" onclick="toggle('${post.city}')">Dive in</button>
+
+            <div id="${post.city}" style="display:none; margin-top:20px;">
+              ${post.content.map(item => `
+                <h3>${item.subtitle}</h3>
+                <img src="${item.image}" class="image" loading="lazy">
+                <p>${item.text}</p>
+              `).join("")}
+            </div>
+          </div>
+        `;
+      });
+    });
+
+  function toggle(id) {
+    const el = document.getElementById(id);
+    el.style.display = el.style.display === "none" ? "block" : "none";
+  }
+</script>
+
 
 </body>
 
