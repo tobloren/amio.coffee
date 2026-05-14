@@ -36,7 +36,7 @@
       "specialty coffee",
       "field notes"
     ],
-    "cover_image": "IMG_7993.jpeg",
+    "cover_image": "exchange-turkish-eggs.jpeg",
     "stop_count": 5
   },
   "stops": [
@@ -44,7 +44,7 @@
       "stop": 1,
       "cafe": "Exchange",
       "location": "East End, Adelaide CBD",
-      "image": "IMG_7993.jpeg",
+      "image": "exchange-turkish-eggs.jpeg",
       "brew": {
         "coffee": "Ecuador Single Origin",
         "method": "Filter",
@@ -64,7 +64,7 @@
       "stop": 2,
       "cafe": "Ember",
       "location": "Specialty Coffee Lab",
-      "image": "IMG_8054.jpeg",
+      "image": "ember-exterior.jpeg",
       "brew": {
         "coffee": "Rafael Vinhal LOT456",
         "method": "Espresso",
@@ -87,7 +87,7 @@
       "stop": 3,
       "cafe": "The Dutchman",
       "location": "Port Adelaide",
-      "image": "FullSizeRender.jpeg",
+      "image": "dutchman-flat-white.jpeg",
       "brew": {
         "coffee": "House Espresso",
         "method": "Flat White",
@@ -105,7 +105,7 @@
       "stop": 4,
       "cafe": "Closer",
       "location": "Glenelg",
-      "image": "FullSizeRender.jpeg",
+      "image": "closer-burundi-mutana.jpeg",
       "brew": {
         "coffee": "Burundi Mutana",
         "method": "Pour Over",
@@ -125,7 +125,7 @@
       "stop": 5,
       "cafe": "Soho",
       "location": "Soho",
-      "image": "FullSizeRender.jpeg",
+      "image": "soho-hot-donna.jpeg",
       "brew": {
         "coffee": "Kenya Single Origin",
         "method": "Pour Over",
