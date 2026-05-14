@@ -3,17 +3,17 @@
     "city": "brisbane",
     "title": "Brisbane – Queensland/Australia",
     "image": "images/Brisbane.jpg",
-    "intro": "Welcome to my 1st blog article, where we journey through the vibrant coffee culture of Brisbane.\n\nIf you’ve ever found yourself longing for that perfect cup of Joe while basking in the warm Australian sunshine, then you’re in the right place.\n\nIn this series, I’ll be your guide through Brisbane's bustling coffee scene, uncovering hidden gems and must-visit spots.\n\nSo, grab your cup, settle in, and let's dive into the rich and aromatic world of Brisbane’s coffee culture.",
+    "intro": "Welcome to my 1st blog article, where we journey through the vibrant coffee culture of Brisbane.\n\nIf you've ever found yourself longing for that perfect cup of Joe while basking in the warm Australian sunshine, then you're in the right place.\n\nIn this series, I'll be your guide through Brisbane's bustling coffee scene, uncovering hidden gems and must-visit spots.\n\nSo, grab your cup, settle in, and let's dive into the rich and aromatic world of Brisbane's coffee culture.",
     "content": [
       {
         "subtitle": "Industry Beans – Newstead",
         "image": "images/IndustryBeans.jpg",
-        "text": "Nestled in the heart of Newstead, Industry Beans is a must-visit for coffee enthusiasts.\n\nKnown for roasting their beans in small batches, this cafe boasts three roasteries across Australia, each with its unique espresso blend.\n\nWhether you’re a seasoned coffee lover or a curious newcomer, Industry Beans provides a refined and memorable coffee experience."
+        "text": "Nestled in the heart of Newstead, Industry Beans is a must-visit for coffee enthusiasts.\n\nKnown for roasting their beans in small batches, this cafe boasts three roasteries across Australia, each with its unique espresso blend.\n\nWhether you're a seasoned coffee lover or a curious newcomer, Industry Beans provides a refined and memorable coffee experience."
       },
       {
         "subtitle": "Edward Cafe – Brisbane CBD",
         "image": "images/Edward.jpg",
-        "text": "Situated in the bustling Central Business District, Edward Cafe is a gem for both coffee lovers and foodies alike.\n\nBesides serving outstanding coffee, this cafe offers delicious sandwiches that make for a perfect lunch break or mid-afternoon snack.\n\nThe friendly atmosphere and prime location make it an ideal spot to unwind and indulge in some of Brisbane’s finest brews and bites."
+        "text": "Situated in the bustling Central Business District, Edward Cafe is a gem for both coffee lovers and foodies alike.\n\nBesides serving outstanding coffee, this cafe offers delicious sandwiches that make for a perfect lunch break or mid-afternoon snack.\n\nThe friendly atmosphere and prime location make it an ideal spot to unwind and indulge in some of Brisbane's finest brews and bites."
       },
       {
         "subtitle": "Bear Bones Coffee – Fortitude Valley",
@@ -23,124 +23,128 @@
     ]
   },
   {
-  "meta": {
-    "title": "Five Cups, four days in Adelaide",
-    "slug": "five-cups-four-days-adelaide",
-    "date": "2026-05-14",
-    "city": "Adelaide, SA",
+    "city": "adelaide",
+    "title": "Adelaide – South Australia",
+    "meta": {
+      "title": "Five Cups, Four Days in Adelaide",
+      "slug": "five-cups-four-days-adelaide",
+      "date": "2026-05-14",
+      "city": "Adelaide, SA",
+      "intro": "From the East End to Glenelg, Port Adelaide to Soho — a week of chasing extraordinary cups across the city.",
+      "tags": [
+        "Adelaide",
+        "pour over",
+        "espresso",
+        "specialty coffee",
+        "field notes"
+      ],
+      "cover_image": "images/exchange-turkish-eggs.jpeg",
+      "stop_count": 5
+    },
+    "image": "images/exchange-turkish-eggs.jpeg",
     "intro": "From the East End to Glenelg, Port Adelaide to Soho — a week of chasing extraordinary cups across the city.",
-    "tags": [
-      "Adelaide",
-      "pour over",
-      "espresso",
-      "specialty coffee",
-      "field notes"
-    ],
-    "cover_image": "exchange-turkish-eggs.jpeg",
-    "stop_count": 5
-  },
-  "stops": [
-    {
-      "stop": 1,
-      "cafe": "Exchange",
-      "location": "East End, Adelaide CBD",
-      "image": "exchange-turkish-eggs.jpeg",
-      "brew": {
-        "coffee": "Ecuador Single Origin",
-        "method": "Filter",
-        "origin": "Hakuna Matata, Maputo, Ecuador",
-        "process": "Washed",
-        "variety": "Typica",
-        "altitude_masl": 1350,
-        "tasting_notes": [
-          "Cranberries",
-          "golden sultanas"
-        ]
+    "stops": [
+      {
+        "stop": 1,
+        "cafe": "Exchange",
+        "location": "East End, Adelaide CBD",
+        "image": "images/exchange-turkish-eggs.jpeg",
+        "brew": {
+          "coffee": "Ecuador Single Origin",
+          "method": "Filter",
+          "origin": "Hakuna Matata, Maputo, Ecuador",
+          "process": "Washed",
+          "variety": "Typica",
+          "altitude_masl": 1350,
+          "tasting_notes": [
+            "Cranberries",
+            "golden sultanas"
+          ]
+        },
+        "pull_quote": "The food earns its place alongside the coffee — that's rare.",
+        "body": "You start here. You always start here. Exchange has held its own as one of the city's finest for over a decade — ranked 37th in the World's 100 Best Coffee Shops in its inaugural year. The Turkish Eggs arrived first: poached eggs over whipped yoghurt, charred broccolini, grilled sourdough, dukkah and chilli oil. Produce-driven, well-considered. The filter was an Ecuador Single Origin from the Hakuna Matata region — Typica, Washed, Light roast, 1350 masl. Cranberry acidity present but never pushy. Clean, bright, deeply reliable."
       },
-      "pull_quote": "The food earns its place alongside the coffee — that's rare.",
-      "body": "You start here. You always start here. Exchange has held its own as one of the city's finest for over a decade — ranked 37th in the World's 100 Best Coffee Shops in its inaugural year. The Turkish Eggs arrived first: poached eggs over whipped yoghurt, charred broccolini, grilled sourdough, dukkah and chilli oil. Produce-driven, well-considered. The filter was an Ecuador Single Origin from the Hakuna Matata region — Typica, Washed, Light roast, 1350 masl. Cranberry acidity present but never pushy. Clean, bright, deeply reliable."
-    },
-    {
-      "stop": 2,
-      "cafe": "Ember",
-      "location": "Specialty Coffee Lab",
-      "image": "ember-exterior.jpeg",
-      "brew": {
-        "coffee": "Rafael Vinhal LOT456",
-        "method": "Espresso",
-        "origin": "Cerrado Mineiro, Brazil",
-        "process": "Anaerobic Natural",
-        "variety": "Catuai & Icatu",
-        "altitude_masl": 980,
-        "sca_score": 86,
-        "tasting_notes": [
-          "Vanilla",
-          "milk chocolate",
-          "coconut",
-          "sweet"
-        ]
+      {
+        "stop": 2,
+        "cafe": "Ember",
+        "location": "Specialty Coffee Lab",
+        "image": "images/ember-exterior.jpeg",
+        "brew": {
+          "coffee": "Rafael Vinhal LOT456",
+          "method": "Espresso",
+          "origin": "Cerrado Mineiro, Brazil",
+          "process": "Anaerobic Natural",
+          "variety": "Catuai & Icatu",
+          "altitude_masl": 980,
+          "sca_score": 86,
+          "tasting_notes": [
+            "Vanilla",
+            "milk chocolate",
+            "coconut",
+            "sweet"
+          ]
+        },
+        "pull_quote": "Ember sources with intention. That card on the table isn't decoration.",
+        "body": "Ember is doing something different. The fit-out is spare and considered — clean lines, natural light, the energy of a place that takes itself seriously without being precious about it. The espresso was a Rafael Vinhal LOT456 — Catuai & Icatu from Vinhal Farm in Cerrado Mineiro, Anaerobic Natural, SCA 86. Presented on a card at the table. The coconut note was unmistakable — not added, not milk-based, just what the bean does. Wrapped in milk chocolate and vanilla sweetness, one of the most complete espressos of the week."
       },
-      "pull_quote": "Ember sources with intention. That card on the table isn't decoration.",
-      "body": "Ember is doing something different. The fit-out is spare and considered — clean lines, natural light, the energy of a place that takes itself seriously without being precious about it. The espresso was a Rafael Vinhal LOT456 — Catuai & Icatu from Vinhal Farm in Cerrado Mineiro, Anaerobic Natural, SCA 86. Presented on a card at the table. The coconut note was unmistakable — not added, not milk-based, just what the bean does. Wrapped in milk chocolate and vanilla sweetness, one of the most complete espressos of the week."
-    },
-    {
-      "stop": 3,
-      "cafe": "The Dutchman",
-      "location": "Port Adelaide",
-      "image": "dutchman-flat-white.jpeg",
-      "brew": {
-        "coffee": "House Espresso",
-        "method": "Flat White",
-        "ratio": "Double Shot",
-        "tasting_notes": [
-          "Chocolate",
-          "full body",
-          "clean finish"
-        ]
+      {
+        "stop": 3,
+        "cafe": "The Dutchman",
+        "location": "Port Adelaide",
+        "image": "images/dutchman-flat-white.jpeg",
+        "brew": {
+          "coffee": "House Espresso",
+          "method": "Flat White",
+          "ratio": "Double Shot",
+          "tasting_notes": [
+            "Chocolate",
+            "full body",
+            "clean finish"
+          ]
+        },
+        "pull_quote": "Sometimes the straightforward cup is the most satisfying one of the week.",
+        "body": "Port Adelaide doesn't get enough credit. The Dutchman is a proper neighbourhood café doing proper coffee — no theatre, no fuss. The double-shot flat white arrived with a tulip pour that looked too good to drink. Didn't hesitate anyway. The milk texture was exceptional — silky microfoam that integrates completely. The espresso underneath punched through with full body and a clean finish."
       },
-      "pull_quote": "Sometimes the straightforward cup is the most satisfying one of the week.",
-      "body": "Port Adelaide doesn't get enough credit. The Dutchman is a proper neighbourhood café doing proper coffee — no theatre, no fuss. The double-shot flat white arrived with a tulip pour that looked too good to drink. Didn't hesitate anyway. The milk texture was exceptional — silky microfoam that integrates completely. The espresso underneath punched through with full body and a clean finish."
-    },
-    {
-      "stop": 4,
-      "cafe": "Closer",
-      "location": "Glenelg",
-      "image": "closer-burundi-mutana.jpeg",
-      "brew": {
-        "coffee": "Burundi Mutana",
-        "method": "Pour Over",
-        "origin": "Kayanza, Burundi",
-        "process": "Natural",
-        "variety": "Bourbon",
-        "altitude_masl": 2100,
-        "tasting_notes": [
-          "Strawberry",
-          "blueberry"
-        ]
+      {
+        "stop": 4,
+        "cafe": "Closer",
+        "location": "Glenelg",
+        "image": "images/closer-burundi-mutana.jpeg",
+        "brew": {
+          "coffee": "Burundi Mutana",
+          "method": "Pour Over",
+          "origin": "Kayanza, Burundi",
+          "process": "Natural",
+          "variety": "Bourbon",
+          "altitude_masl": 2100,
+          "tasting_notes": [
+            "Strawberry",
+            "blueberry"
+          ]
+        },
+        "pull_quote": "A lot of care and distance between a farm in Kayanza and your table by the beach.",
+        "body": "Glenelg doesn't feel like a specialty coffee destination — which is exactly why Closer is such a find. Glen and Sunny run this place, and they are genuinely two of the nicest people you'll meet behind a bar. The kind of hospitality that feels effortless because it actually is. And Closer is just one part of their world — they also run a record store and a hair salon. Culture, community, coffee, all under one roof. The Burundi Mutana from the Long Miles Project, served on a steel tray with a glass server, a ceramic cup, and a glass information tube with the full origin story. As the cup cooled, strawberry and blueberry came forward unmistakably. Done well."
       },
-      "pull_quote": "A lot of care and distance between a farm in Kayanza and your table by the beach.",
-      "body": "Glenelg doesn't feel like a specialty coffee destination — which is exactly why Closer is such a find. Glen and Sunny run this place, and they are genuinely two of the nicest people you'll meet behind a bar. The kind of hospitality that feels effortless because it actually is. And Closer is just one part of their world — they also run a record store and a hair salon. Culture, community, coffee, all under one roof. The Burundi Mutana from the Long Miles Project, served on a steel tray with a glass server, a ceramic cup, and a glass information tube with the full origin story. As the cup cooled, strawberry and blueberry came forward unmistakably. Done well."
-    },
-    {
-      "stop": 5,
-      "cafe": "Soho",
-      "location": "Soho",
-      "image": "soho-hot-donna.jpeg",
-      "brew": {
-        "coffee": "Kenya Single Origin",
-        "method": "Pour Over",
-        "ratio": "18g / 300ml",
-        "origin": "Kenya",
-        "process": "Washed",
-        "tasting_notes": [
-          "Balanced acidity",
-          "sugar cane",
-          "bright"
-        ]
-      },
-      "pull_quote": "Wait for it to cool. That's when the sugar cane notes come forward properly.",
-      "body": "The week ends here — and Soho earns the closer. What makes it special isn't just the coffee in the cup — it's that they roast their own. The Phantom Series machine out the back, Hot Donna, is doing serious work. Watching a batch tumble into the cooling tray puts everything in perspective. Kenya Single Origin, three-stage pour: 50ml bloom, up to 100ml, then the rest. The acidity was beautifully balanced — bright, structured, with sugar cane emerging properly as the cup cooled."
-    }
-  ]
-}
+      {
+        "stop": 5,
+        "cafe": "Soho",
+        "location": "Soho",
+        "image": "images/soho-hot-donna.jpeg",
+        "brew": {
+          "coffee": "Kenya Single Origin",
+          "method": "Pour Over",
+          "ratio": "18g / 300ml",
+          "origin": "Kenya",
+          "process": "Washed",
+          "tasting_notes": [
+            "Balanced acidity",
+            "sugar cane",
+            "bright"
+          ]
+        },
+        "pull_quote": "Wait for it to cool. That's when the sugar cane notes come forward properly.",
+        "body": "The week ends here — and Soho earns the closer. What makes it special isn't just the coffee in the cup — it's that they roast their own. The Phantom Series machine out the back, Hot Donna, is doing serious work. Watching a batch tumble into the cooling tray puts everything in perspective. Kenya Single Origin, three-stage pour: 50ml bloom, up to 100ml, then the rest. The acidity was beautifully balanced — bright, structured, with sugar cane emerging properly as the cup cooled."
+      }
+    ]
+  }
 ]
