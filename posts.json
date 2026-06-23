@@ -1,56 +1,76 @@
 [
   {
     "city": "brisbane",
+    "slug": "brisbane-queensland-australia",
     "title": "Brisbane – Queensland/Australia",
+    "date": "2024-03-15",
+    "country": "Australia",
+    "tags": ["australia", "specialty-coffee", "city-guide", "brisbane"],
     "image": "images/Brisbane.jpg",
+    "imageAlt": "Coffee street scene in Brisbane, Queensland, Australia",
+    "excerpt": "A journey through Brisbane's vibrant coffee culture — hidden gems, small-batch roasters, and must-visit spots in Queensland's capital.",
     "intro": "Welcome to my 1st blog article, where we journey through the vibrant coffee culture of Brisbane.\n\nIf you've ever found yourself longing for that perfect cup of Joe while basking in the warm Australian sunshine, then you're in the right place.\n\nIn this series, I'll be your guide through Brisbane's bustling coffee scene, uncovering hidden gems and must-visit spots.\n\nSo, grab your cup, settle in, and let's dive into the rich and aromatic world of Brisbane's coffee culture.",
     "content": [
       {
         "subtitle": "Industry Beans – Newstead",
         "image": "images/IndustryBeans.jpg",
+        "imageAlt": "Interior of Industry Beans café in Newstead, Brisbane",
         "text": "Nestled in the heart of Newstead, Industry Beans is a must-visit for coffee enthusiasts.\n\nKnown for roasting their beans in small batches, this cafe boasts three roasteries across Australia, each with its unique espresso blend.\n\nWhether you're a seasoned coffee lover or a curious newcomer, Industry Beans provides a refined and memorable coffee experience."
       },
       {
         "subtitle": "Edward Cafe – Brisbane CBD",
         "image": "images/Edward.jpg",
+        "imageAlt": "Cozy interior of Edward Cafe in Brisbane's Central Business District",
         "text": "Situated in the bustling Central Business District, Edward Cafe is a gem for both coffee lovers and foodies alike.\n\nBesides serving outstanding coffee, this cafe offers delicious sandwiches that make for a perfect lunch break or mid-afternoon snack.\n\nThe friendly atmosphere and prime location make it an ideal spot to unwind and indulge in some of Brisbane's finest brews and bites."
       },
       {
         "subtitle": "Bear Bones Coffee – Fortitude Valley",
         "image": "images/BearBones.jpg",
+        "imageAlt": "Coffee roasting setup at Bear Bones Coffee in Fortitude Valley, Brisbane",
         "text": "A visit to Bear Bones Coffee in Fortitude Valley is a must for those who appreciate the art of coffee roasting.\n\nIn the summer months, they roast their beans early in the morning before the heat sets in, ensuring the freshest flavours.\n\nOne of the highlights at Bear Bones is the Barista Breakfast, which includes an espresso, a batch brew, and a flat white.\n\nThe batch brew from Honduras is a sensation, while the Papua New Guinea espresso is remarkably fruity and complex."
       }
     ]
   },
   {
     "city": "adelaide",
+    "slug": "adelaide-south-australia",
     "title": "Adelaide – South Australia",
+    "date": "2024-08-20",
+    "country": "Australia",
+    "tags": ["australia", "specialty-coffee", "city-guide", "adelaide"],
     "image": "images/exchange-turkish-eggs.jpeg",
+    "imageAlt": "Turkish eggs breakfast dish at Exchange café in Adelaide's East End",
+    "excerpt": "From the East End to Glenelg, Port Adelaide to Soho — a week of chasing extraordinary cups across the city. Five stops. Five very different expressions of what specialty coffee can be.",
     "intro": "From the East End to Glenelg, Port Adelaide to Soho — a week of chasing extraordinary cups across the city.\n\nFive stops. Five very different expressions of what specialty coffee can be.",
     "content": [
       {
         "subtitle": "Exchange – East End, Adelaide CBD",
         "image": "images/exchange-turkish-eggs.jpeg",
+        "imageAlt": "Turkish eggs with whipped yoghurt and chilli oil at Exchange café, Adelaide",
         "text": "You start here. You always start here. Exchange has held its own as one of the city's finest for over a decade — ranked 37th in the World's 100 Best Coffee Shops in its inaugural year.\n\nThe Turkish Eggs arrived first: poached eggs over whipped yoghurt, charred broccolini, grilled sourdough, dukkah and chilli oil. Produce-driven, well-considered. The food earns its place alongside the coffee — that's rare.\n\nThe filter was an Ecuador Single Origin from the Hakuna Matata region — Typica, Washed, Light roast, 1350 masl. Cranberry acidity present but never pushy. Clean, bright, deeply reliable."
       },
       {
         "subtitle": "Ember Specialty Coffee Lab",
         "image": "images/ember-exterior.jpeg",
+        "imageAlt": "Clean, minimal exterior of Ember Specialty Coffee Lab in Adelaide",
         "text": "Ember is doing something different. The fit-out is spare and considered — clean lines, natural light, the energy of a place that takes itself seriously without being precious about it.\n\nThe espresso was a Rafael Vinhal LOT456 — Catuai & Icatu from Vinhal Farm in Cerrado Mineiro, Brazil. Anaerobic Natural, SCA 86. Presented on a card at the table.\n\nThe coconut note was unmistakable — not added, not milk-based, just what the bean does. Wrapped in milk chocolate and vanilla sweetness, one of the most complete espressos of the week."
       },
       {
         "subtitle": "The Dutchman – Port Adelaide",
         "image": "images/dutchman-flat-white.jpeg",
+        "imageAlt": "A perfectly poured flat white with tulip latte art at The Dutchman, Port Adelaide",
         "text": "Port Adelaide doesn't get enough credit. The Dutchman is a proper neighbourhood café doing proper coffee — no theatre, no fuss.\n\nThe double-shot flat white arrived with a tulip pour that looked too good to drink. Didn't hesitate anyway. The milk texture was exceptional — silky microfoam that integrates completely. The espresso underneath punched through with full body and a clean finish.\n\nSometimes the straightforward cup is the most satisfying one of the week."
       },
       {
         "subtitle": "Closer – Glenelg",
         "image": "images/closer-burundi-mutana.jpeg",
+        "imageAlt": "Burundi Mutana filter coffee served on a steel tray at Closer café in Glenelg",
         "text": "Glenelg doesn't feel like a specialty coffee destination — which is exactly why Closer is such a find. Glen and Sunny run this place, and they are genuinely two of the nicest people you'll meet behind a bar.\n\nAnd Closer is just one part of their world — they also run a record store and a hair salon. Culture, community, coffee, all under one roof.\n\nThe Burundi Mutana from the Long Miles Project — Kayanza, Bourbon, 2100 masl, Natural — served on a steel tray with a glass server and an information tube with the full origin story. As the cup cooled, strawberry and blueberry came forward unmistakably."
       },
       {
         "subtitle": "Soho",
         "image": "images/soho-hot-donna.jpeg",
+        "imageAlt": "Pour over coffee being brewed on the Hot Donna roaster machine at Soho, Adelaide",
         "text": "The week ends here — and Soho earns the closer. What makes it special isn't just the coffee in the cup — it's that they roast their own. The Phantom Series machine out the back, Hot Donna, is doing serious work.\n\nKenya Single Origin, pour over, 18g to 300ml. Three-stage pour: 50ml bloom, up to 100ml, then the rest. The acidity was beautifully balanced — bright, structured, with sugar cane notes emerging properly as the cup cooled.\n\nWait for it to cool. That's when the sugar cane notes come forward properly."
       }
     ]

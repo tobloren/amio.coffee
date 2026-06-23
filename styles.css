@@ -1,47 +1,41 @@
 /* ============================
+   Global Reset
+============================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* ============================
    Farbvariablen
 ============================ */
-
 :root {
   --dark: #2C3639;
   --mid: #3F4E4F;
   --accent: #A27B5C;
   --light: #DCD7C9;
-  --font-body: "Montserrat";
-  --font-head: "Shadows Into Light Two";
+  --font-body: "Montserrat", sans-serif;
+  --font-head: "Shadows Into Light Two", cursive;
 }
-
 
 /* ============================
    Grundtypografie
 ============================ */
-
 p {
   font-family: var(--font-body);
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   font-family: var(--font-head);
 }
 
 h1 {
   color: var(--accent);
-  padding-bottom: 3%;
+  padding-bottom: 1rem;
 }
-
-a {
-  text-decoration: none;
-  color: var(--mid);
-}
-
 
 /* ============================
-   Mobile‑First Section Layout
+   Mobile-First Section Layout
 ============================ */
-
-/* Harmonische Sections */
 .section {
   padding: 60px 8%;
   text-align: center;
@@ -53,16 +47,12 @@ a {
   }
 }
 
-
-
-
-
 /* ============================
    Navbar
 ============================ */
-
 .custom-nav {
   background-color: var(--dark);
+  margin-bottom: 0;
 }
 
 @media (min-width: 768px) {
@@ -74,7 +64,7 @@ a {
 .navbar-brand {
   font-family: var(--font-body);
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: 600;
   color: var(--light);
   transition: color 0.3s ease;
 }
@@ -86,36 +76,26 @@ a {
 .nav-link {
   font-size: 1.1rem;
   font-family: var(--font-body);
-  color: var(--light);
+  color: var(--light) !important;
   transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-  color: var(--accent);
+  color: var(--accent) !important;
 }
 
-
-/* ============================
-   Header / Title Section
-============================ */
-
-#title .container-fluid {
-  background-color: var(--dark);
-  color: var(--light);
-  padding: 2% 8%;
+/* Hamburger-Toggler Farbe */
+.custom-toggler {
+  border-color: var(--accent);
 }
 
-@media (min-width: 768px) {
-  #title .container-fluid {
-    padding: 1% 15%;
-  }
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23A27B5C' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
-
 
 /* ============================
    Feature Sections
 ============================ */
-
 #amio .container-fluid {
   background-color: var(--mid);
   color: var(--light);
@@ -132,75 +112,99 @@ a {
   color: var(--light);
 }
 
-
 /* ============================
    Bilder
 ============================ */
-
-.coffeetitelpage-image {
-  width: 50%;
+.image-hero {
+  width: 90%;
   margin: 0 0 2% 0;
   border-radius: 8px;
 }
 
-.Brisbane-image {
-  width: 50%;
-  margin: 0 0 2% 0;
-  border-radius: 8px;
+@media (min-width: 768px) {
+  .image-hero {
+    width: 50%;
+  }
 }
 
-.image {
+.image-blog {
   width: 100%;
-  margin: 0 0 2% 0;
+  margin: 0 0 1.5rem 0;
   border-radius: 8px;
+}
+
+@media (min-width: 768px) {
+  .image-blog {
+    width: 80%;
+  }
 }
 
 .profile-img {
-  width: 25%;
+  width: 60%;
   margin: 0 0 2% 0;
   border-radius: 25px;
 }
 
+@media (min-width: 768px) {
+  .profile-img {
+    width: 25%;
+  }
+}
 
 /* ============================
    Blog Cards
 ============================ */
-
 .blog-container {
   background-color: var(--light);
   color: var(--mid);
   padding: 20px;
   border-radius: 12px;
   margin-bottom: 30px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: left;
 }
 
 .blog-container h2 {
   color: var(--accent);
+  margin: 1rem 0 0.5rem;
 }
 
 .blog-container h3 {
   color: var(--dark);
-  margin-top: 20px;
+  margin-top: 1.5rem;
 }
 
-.blog-image {
-  padding: 10px;
+.cafe-entry {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
 }
 
 .blog-text {
-  padding: 20px;
+  padding: 0.5rem 0;
 }
 
+@media (min-width: 768px) {
+  .blog-text {
+    padding: 1rem 0;
+  }
+}
+
+.post-content {
+  display: none;
+  margin-top: 20px;
+}
 
 /* ============================
    Buttons
 ============================ */
-
 .btn-primary {
   background-color: var(--mid);
   border-color: var(--dark);
   color: var(--light);
+  font-family: var(--font-body);
+  margin-top: 0.5rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .btn-primary:hover {
@@ -209,11 +213,9 @@ a {
   color: #fff;
 }
 
-
 /* ============================
    Footer
 ============================ */
-
 #footer .container-fluid {
   background-color: var(--dark);
   color: var(--light);
@@ -225,6 +227,8 @@ a {
   padding: 0 10px;
   color: var(--accent);
   transition: color 0.3s ease;
+  text-decoration: none;
+  font-family: var(--font-body);
 }
 
 .social-media:hover {

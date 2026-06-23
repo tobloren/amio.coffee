@@ -1,77 +1,90 @@
 <!DOCTYPE html>
-<html lang="de" dir="ltr">
+<html lang="en" dir="ltr">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>amio coffee</title>
+  <title>amio coffee – Your Coffee Travel Adventures</title>
 
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+  <!-- SEO -->
+  <meta name="description" content="Amio Coffee – Your curated guide to exceptional coffee around the world. City guides, honest café reviews, and coffee culture by Tobias.">
+  <meta name="author" content="Tobias">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="amio coffee – Your Coffee Travel Adventures">
+  <meta property="og:description" content="Your curated guide to exceptional coffee around the world. City guides, honest café reviews, and coffee culture by Tobias.">
+  <meta property="og:image" content="https://amio.coffee/images/coffeetitelpage.jpg">
+  <meta property="og:url" content="https://amio.coffee">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="amio coffee">
+  <meta name="twitter:description" content="Your curated guide to exceptional coffee around the world.">
+  <meta name="twitter:image" content="https://amio.coffee/images/coffeetitelpage.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/amio.coffee.jpg" type="image/jpeg">
+
+  <!-- Bootstrap 5.3.3 (stabile Version) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmU/gKlEn5/B3sBsqQAhC9nX69LO"
     crossorigin="anonymous"></script>
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts (nur genutzte Schriften, kein Merriweather) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Shadows+Into+Light+Two&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
 
-  <!-- CSS Stylesheets -->
+  <!-- CSS -->
   <link rel="stylesheet" href="styles.css">
 
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/1b37ca2f8c.js" crossorigin="anonymous"></script>
-
 </head>
 
 <body>
 
-  <section id="title">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg custom-nav sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/amio.coffee.jpg" alt="amio coffee Logo" width="120" height="100" class="d-inline-block align-text-top">
+      </a>
 
-    <!-- Navbar -->
+      <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-<nav class="navbar navbar-expand-lg custom-nav sticky-top">
-  <div class="container-fluid">
-    <a class="navbar-brand nav-link active" aria-current="page" href="index.html">
-      <img src="images/amio.coffee.jpg" alt="Logo" width="120" height="100" class="d-inline-block align-text-top">
-    </a>
-
-    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-      aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link" href="#amio">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#Blog">Blog</a></li>
-        <li class="nav-item"><a class="nav-link" href="#About">About</a></li>
-      </ul>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#amio">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#Blog">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="#About">About</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-  </section>
-
-  <!-- Features -->
-
+  <!-- Hero Section -->
   <section id="amio">
     <div class="container-fluid section">
       <div class="row">
         <h1>amio coffee – Your coffee travel adventures</h1>
         <div class="feature-box col-12 p-2 p-sm-3 p-md-4">
-          <img class="coffeetitelpage-image" src="images/coffeetitelpage.jpg" loading="lazy">
+          <img class="image-hero" src="images/coffeetitelpage.jpg"
+            alt="A beautifully crafted coffee in a specialty café" loading="lazy">
         </div>
         <div class="feature-box container-fluid section p-2 p-sm-3 p-md-4">
-          <h2>G’day, coffee lovers! ☕️</h2>
+          <h2>G'day, coffee lovers! ☕️</h2>
           <p>Welcome to Amio Coffee — your curated guide to exceptional coffee around the world.</p>
-          <p>I’m Tobias, a coffee‑driven traveler exploring cafés, roasters, and hidden gems across the globe.</p>
-          <p>Here you’ll find carefully researched city guides, honest café reviews, and insights into coffee culture —
+          <p>I'm Tobias, a coffee‑driven traveler exploring cafés, roasters, and hidden gems across the globe.</p>
+          <p>Here you'll find carefully researched city guides, honest café reviews, and insights into coffee culture —
             all tested, photographed, and written with genuine passion.</p>
           <p>Whether you're planning your next trip or simply looking for your new favorite brew, this is your place to
             discover outstanding coffee experiences.</p>
@@ -81,108 +94,124 @@
     </div>
   </section>
 
+  <!-- Blog Section -->
   <section id="Blog">
-    <div class="container-fluid section"> 
-      <h1>Blog</h1>
+    <div class="container-fluid section">
+      <h2>Blog</h2>
+      <div id="blog-loading" class="text-center py-4">
+        <p>Loading posts…</p>
+      </div>
       <div id="blog"></div>
     </div>
   </section>
 
+  <!-- About Section -->
   <section id="About">
     <div class="container-fluid section">
       <div class="row">
-        <h1>About</h1>
+        <h2>About</h2>
         <div class="feature-box col-12">
-          <img class="profile-img" src="images/tobias.jpg" alt="profile-img">
+          <img class="profile-img" src="images/tobias.jpg" alt="Tobias, founder of amio coffee">
         </div>
         <div class="feature-box container-fluid section p-2 p-sm-3 p-md-4">
-          <p>I’m Tobias, an avid traveller and coffee enthusiast exploring the world one café at a time. Join me on my
+          <p>I'm Tobias, an avid traveller and coffee enthusiast exploring the world one café at a time. Join me on my
             journey to uncover the best coffee spots and experience the rich stories behind each cup.</p>
         </div>
       </div>
     </div>
-    </div>
   </section>
 
   <!-- Footer -->
-
   <footer id="footer">
     <div class="container-fluid section">
       <div class="row">
         <div class="container-fluid section">
-          <a class="social-media fa-brands fa-instagram" href="https://www.instagram.com/tobloren/" target="_blank"></a>
-          <a class="social-media fa-solid fa-envelope" href="mailto:mailto:info@amio.coffee"></a>
+          <a class="social-media fa-brands fa-instagram"
+            href="https://www.instagram.com/tobloren/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Tobias auf Instagram"></a>
+          <a class="social-media fa-solid fa-envelope"
+            href="mailto:info@amio.coffee"
+            aria-label="E-Mail an amio coffee senden"></a>
           <a class="social-media" href="datenschutz.html">Datenschutz</a>
           <a class="social-media" href="impressum.html">Impressum</a>
         </div>
         <div class="container-fluid section">
-          <p>&copy; 2025 amio coffee</p>
+          <p>&copy; 2026 amio coffee</p>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- Script -->
+  <!-- Blog Script -->
+  <script>
+    fetch("posts.json")
+      .then(res => {
+        if (!res.ok) throw new Error("posts.json could not be loaded");
+        return res.json();
+      })
+      .then(posts => {
+        document.getElementById("blog-loading").style.display = "none";
+        const container = document.getElementById("blog");
 
-<script>
-  fetch("posts.json")
-    .then(res => res.json())
-    .then(posts => {
-      const container = document.getElementById("blog");
+        posts.forEach(post => {
+          const introParagraphs = post.intro
+            .split("\n\n")
+            .map(p => `<p>${p}</p>`)
+            .join("");
 
-      posts.forEach(post => {
-        // Intro in Absätze umwandeln
-        const introParagraphs = post.intro
-          .split("\n\n")
-          .map(p => `<p>${p}</p>`)
-          .join("");
+          const contentHTML = post.content
+            .map(item => {
+              const contentParagraphs = item.text
+                .split("\n\n")
+                .map(p => `<p>${p}</p>`)
+                .join("");
 
-        // Content-Abschnitte formatieren
-        const contentHTML = post.content
-          .map(item => {
-            const contentParagraphs = item.text
-              .split("\n\n")
-              .map(p => `<p>${p}</p>`)
-              .join("");
+              return `
+                <div class="cafe-entry">
+                  <h3>${item.subtitle}</h3>
+                  <img src="${item.image}" alt="${item.imageAlt || item.subtitle}" class="image-blog" loading="lazy">
+                  <div class="blog-text">
+                    ${contentParagraphs}
+                  </div>
+                </div>
+              `;
+            })
+            .join("");
 
-            return `
-              <h3>${item.subtitle}</h3>
-              <img src="${item.image}" class="image" loading="lazy">
+          container.innerHTML += `
+            <article class="blog-container">
+              <img src="${post.image}" alt="${post.imageAlt || post.title}" class="image-blog" loading="lazy">
+              <h2>${post.title}</h2>
               <div class="blog-text">
-                ${contentParagraphs}
+                ${introParagraphs}
               </div>
-            `;
-          })
-          .join("");
-
-        // Gesamten Blog-Artikel einfügen
-        container.innerHTML += `
-          <div class="blog-container">
-            <img src="${post.image}" class="image" loading="lazy">
-            <h2>${post.title}</h2>
-
-            <div class="blog-text">
-              ${introParagraphs}
-            </div>
-
-            <button class="btn btn-primary" onclick="toggle('${post.city}')">Dive in</button>
-
-            <div id="${post.city}" style="display:none; margin-top:20px;">
-              ${contentHTML}
-            </div>
-          </div>
-        `;
+              <button class="btn btn-primary" onclick="togglePost('${post.city}', this)" aria-expanded="false">
+                Dive in ↓
+              </button>
+              <div id="${post.city}" class="post-content" aria-hidden="true">
+                ${contentHTML}
+              </div>
+            </article>
+          `;
+        });
+      })
+      .catch(err => {
+        document.getElementById("blog-loading").innerHTML =
+          "<p>Blog posts could not be loaded. Please try again later.</p>";
+        console.error(err);
       });
-    });
 
-  function toggle(id) {
-    const el = document.getElementById(id);
-    el.style.display = el.style.display === "none" ? "block" : "none";
-  }
-</script>
-
-
+    function togglePost(id, btn) {
+      const el = document.getElementById(id);
+      const isHidden = el.style.display === "none" || el.style.display === "";
+      el.style.display = isHidden ? "block" : "none";
+      el.setAttribute("aria-hidden", isHidden ? "false" : "true");
+      btn.setAttribute("aria-expanded", isHidden ? "true" : "false");
+      btn.textContent = isHidden ? "Close ↑" : "Dive in ↓";
+    }
+  </script>
 
 </body>
-
 </html>
