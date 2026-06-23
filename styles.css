@@ -55,12 +55,6 @@ h1 {
   margin-bottom: 0;
 }
 
-@media (min-width: 768px) {
-  .custom-nav {
-    margin-bottom: 30px;
-  }
-}
-
 .navbar-brand {
   font-family: var(--font-body);
   font-size: 2rem;
@@ -193,6 +187,73 @@ h1 {
 .post-content {
   display: none;
   margin-top: 20px;
+}
+
+/* ============================
+   Blog Karussell (Mobile)
+============================ */
+
+/* Mobile: Karussell */
+@media (max-width: 767px) {
+  .blog-carousel {
+    position: relative;
+    overflow: hidden;
+    touch-action: pan-y;
+  }
+
+  .blog-track {
+    display: flex;
+    transition: transform 0.35s ease;
+  }
+
+  .blog-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    padding: 0 4px;
+  }
+
+  /* Punkte-Navigation */
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.2);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.3s ease;
+  }
+
+  .carousel-dot.active {
+    background-color: var(--accent);
+  }
+}
+
+/* Desktop: normale Listenansicht */
+@media (min-width: 768px) {
+  .blog-carousel {
+    display: block;
+  }
+
+  .blog-track {
+    display: block;
+  }
+
+  .blog-slide {
+    display: block;
+    padding: 0;
+  }
+
+  .carousel-dots {
+    display: none;
+  }
 }
 
 /* ============================

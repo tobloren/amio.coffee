@@ -155,7 +155,8 @@
         document.getElementById("blog-loading").style.display = "none";
         const container = document.getElementById("blog");
 
-        posts.forEach(post => {
+        // Slides HTML bauen
+        const slidesHTML = posts.map(post => {
           const introParagraphs = post.intro
             .split("\n\n")
             .map(p => `<p>${p}</p>`)
@@ -167,35 +168,48 @@
                 .split("\n\n")
                 .map(p => `<p>${p}</p>`)
                 .join("");
-
               return `
                 <div class="cafe-entry">
                   <h3>${item.subtitle}</h3>
                   <img src="${item.image}" alt="${item.imageAlt || item.subtitle}" class="image-blog" loading="lazy">
-                  <div class="blog-text">
-                    ${contentParagraphs}
-                  </div>
-                </div>
-              `;
+                  <div class="blog-text">${contentParagraphs}</div>
+                </div>`;
             })
             .join("");
 
-          container.innerHTML += `
-            <article class="blog-container">
-              <img src="${post.image}" alt="${post.imageAlt || post.title}" class="image-blog" loading="lazy">
-              <h2>${post.title}</h2>
-              <div class="blog-text">
-                ${introParagraphs}
-              </div>
-              <button class="btn btn-primary" onclick="togglePost('${post.city}', this)" aria-expanded="false">
-                Dive in ↓
-              </button>
-              <div id="${post.city}" class="post-content" aria-hidden="true">
-                ${contentHTML}
-              </div>
-            </article>
-          `;
-        });
+          return `
+            <div class="blog-slide">
+              <article class="blog-container">
+                <img src="${post.image}" alt="${post.imageAlt || post.title}" class="image-blog" loading="lazy">
+                <h2>${post.title}</h2>
+                <div class="blog-text">${introParagraphs}</div>
+                <button class="btn btn-primary" onclick="togglePost('${post.city}', this)" aria-expanded="false">
+                  Dive in ↓
+                </button>
+                <div id="${post.city}" class="post-content" aria-hidden="true">
+                  ${contentHTML}
+                </div>
+              </article>
+            </div>`;
+        }).join("");
+
+        // Punkte-Navigation bauen
+        const dotsHTML = posts.map((_, i) =>
+          `<button class="carousel-dot ${i === 0 ? 'active' : ''}" onclick="goToSlide(${i})" aria-label="Post ${i + 1}"></button>`
+        ).join("");
+
+        container.innerHTML = `
+          <div class="blog-carousel" id="blogCarousel">
+            <div class="blog-track" id="blogTrack">
+              ${slidesHTML}
+            </div>
+          </div>
+          <div class="carousel-dots" id="carouselDots">
+            ${dotsHTML}
+          </div>`;
+
+        // Touch/Swipe-Logik initialisieren
+        initCarousel();
       })
       .catch(err => {
         document.getElementById("blog-loading").innerHTML =
@@ -203,6 +217,7 @@
         console.error(err);
       });
 
+    // Toggle "Dive in" / "Close"
     function togglePost(id, btn) {
       const el = document.getElementById(id);
       const isHidden = el.style.display === "none" || el.style.display === "";
@@ -210,6 +225,52 @@
       el.setAttribute("aria-hidden", isHidden ? "false" : "true");
       btn.setAttribute("aria-expanded", isHidden ? "true" : "false");
       btn.textContent = isHidden ? "Close ↑" : "Dive in ↓";
+    }
+
+    // Karussell-Logik
+    let currentSlide = 0;
+    let totalSlides = 0;
+    let startX = 0;
+    let isDragging = false;
+
+    function initCarousel() {
+      const track = document.getElementById("blogTrack");
+      const carousel = document.getElementById("blogCarousel");
+      totalSlides = track ? track.children.length : 0;
+
+      if (!carousel || totalSlides === 0) return;
+
+      // Touch-Events (Mobile Swipe)
+      carousel.addEventListener("touchstart", e => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+      }, { passive: true });
+
+      carousel.addEventListener("touchend", e => {
+        if (!isDragging) return;
+        const diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) {
+          diff > 0 ? goToSlide(currentSlide + 1) : goToSlide(currentSlide - 1);
+        }
+        isDragging = false;
+      }, { passive: true });
+    }
+
+    function goToSlide(index) {
+      // Nur auf Mobile aktiv — auf Desktop passiert nichts
+      if (window.innerWidth >= 768) return;
+
+      totalSlides = document.getElementById("blogTrack")?.children.length || 0;
+      if (index < 0 || index >= totalSlides) return;
+
+      currentSlide = index;
+      const track = document.getElementById("blogTrack");
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+      // Punkte aktualisieren
+      document.querySelectorAll(".carousel-dot").forEach((dot, i) => {
+        dot.classList.toggle("active", i === currentSlide);
+      });
     }
   </script>
 
