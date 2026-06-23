@@ -97,11 +97,7 @@
     <div class="container-fluid section">
       <h2>Blog</h2>
       <div id="blog-loading" class="text-center py-4"><p>Loading posts…</p></div>
-      <!-- Karussell-Wrapper -->
-      <div class="blog-carousel" id="blogCarousel">
-        <div class="blog-track" id="blogTrack"></div>
-      </div>
-      <div class="carousel-dots" id="carouselDots"></div>
+      <div id="blog"></div>
     </div>
   </section>
 
@@ -144,12 +140,6 @@
   </footer>
 
   <script>
-    // ── Karussell-State ──────────────────────────────
-    let currentSlide = 0;
-    let totalSlides  = 0;
-    let touchStartX  = 0;
-
-    // ── Posts laden & rendern ────────────────────────
     fetch("posts.json")
       .then(res => {
         if (!res.ok) throw new Error("posts.json not found");
@@ -157,19 +147,14 @@
       })
       .then(posts => {
         document.getElementById("blog-loading").style.display = "none";
+        const container = document.getElementById("blog");
 
-        const track = document.getElementById("blogTrack");
-        const dots  = document.getElementById("carouselDots");
-        totalSlides = posts.length;
-
-        posts.forEach((post, index) => {
-          // Intro-Absätze
+        posts.forEach(post => {
           const introParagraphs = post.intro
             .split("\n\n")
             .map(p => `<p>${p}</p>`)
             .join("");
 
-          // Café-Einträge
           const contentHTML = post.content.map(item => {
             const paras = item.text.split("\n\n").map(p => `<p>${p}</p>`).join("");
             return `
@@ -180,44 +165,19 @@
               </div>`;
           }).join("");
 
-          // Slide einfügen
-          const slide = document.createElement("div");
-          slide.className = "blog-slide";
-          slide.innerHTML = `
+          container.innerHTML += `
             <article class="blog-container">
               <img src="${post.image}" alt="${post.imageAlt || post.title}" class="image-blog" loading="lazy">
               <h2>${post.title}</h2>
               <div class="blog-text">${introParagraphs}</div>
-              <button class="btn btn-primary"
-                onclick="togglePost('${post.city}', this)"
-                aria-expanded="false">Dive in ↓</button>
+              <button class="btn btn-primary" onclick="togglePost('${post.city}', this)" aria-expanded="false">
+                Dive in ↓
+              </button>
               <div id="${post.city}" class="post-content" aria-hidden="true">
                 ${contentHTML}
               </div>
             </article>`;
-          track.appendChild(slide);
-
-          // Punkt einfügen
-          const dot = document.createElement("button");
-          dot.className = "carousel-dot" + (index === 0 ? " active" : "");
-          dot.setAttribute("aria-label", `Post ${index + 1}`);
-          dot.addEventListener("click", () => goToSlide(index));
-          dots.appendChild(dot);
         });
-
-        // Touch-Events am Karussell registrieren
-        const carousel = document.getElementById("blogCarousel");
-
-        carousel.addEventListener("touchstart", e => {
-          touchStartX = e.touches[0].clientX;
-        }, { passive: true });
-
-        carousel.addEventListener("touchend", e => {
-          const diff = touchStartX - e.changedTouches[0].clientX;
-          if (Math.abs(diff) > 40) {
-            goToSlide(diff > 0 ? currentSlide + 1 : currentSlide - 1);
-          }
-        }, { passive: true });
       })
       .catch(err => {
         document.getElementById("blog-loading").innerHTML =
@@ -225,26 +185,6 @@
         console.error(err);
       });
 
-    // ── Zu Slide springen ────────────────────────────
-    function goToSlide(index) {
-      // Auf Desktop nichts tun
-      if (window.innerWidth >= 768) return;
-      // Grenzen prüfen
-      if (index < 0 || index >= totalSlides) return;
-
-      currentSlide = index;
-
-      // Track verschieben
-      const track = document.getElementById("blogTrack");
-      track.style.transform = `translateX(-${currentSlide * 100}%)`;
-
-      // Punkte aktualisieren
-      document.querySelectorAll(".carousel-dot").forEach((dot, i) => {
-        dot.classList.toggle("active", i === currentSlide);
-      });
-    }
-
-    // ── Dive-in Toggle ───────────────────────────────
     function togglePost(id, btn) {
       const el = document.getElementById(id);
       const willOpen = el.style.display === "none" || el.style.display === "";
