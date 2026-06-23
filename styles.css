@@ -1,20 +1,5 @@
 /* ============================
-   Global Reset
-============================ */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-/* Bootstrap setzt body auf #fff — überschreiben damit kein
-   weißer Spalt zwischen Navbar und Hero sichtbar ist */
-body {
-  background-color: var(--mid);
-  margin: 0;
-  padding: 0;
-}
-
-/* ============================
-   Farbvariablen
+   Farbvariablen & Bootstrap-Overrides
 ============================ */
 :root {
   --dark: #2C3639;
@@ -23,6 +8,22 @@ body {
   --light: #DCD7C9;
   --font-body: "Montserrat", sans-serif;
   --font-head: "Shadows Into Light Two", cursive;
+  /* Bootstrap-Variable überschreiben */
+  --bs-body-bg: #3F4E4F;
+}
+
+/* ============================
+   Global Reset
+============================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Kein Spalt zwischen Navbar und Hero */
+body {
+  background-color: #3F4E4F !important;
+  margin: 0;
+  padding: 0;
 }
 
 /* ============================
