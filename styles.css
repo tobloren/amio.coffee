@@ -125,11 +125,14 @@ h1 {
   width: 100%;
   margin: 0 0 1.5rem 0;
   border-radius: 8px;
+  display: block;
 }
 
 @media (min-width: 768px) {
   .image-blog {
     width: 80%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -190,64 +193,70 @@ h1 {
 }
 
 /* ============================
-   Blog Karussell (Mobile)
+   Blog Karussell
 ============================ */
 
-/* Mobile: Karussell */
-@media (max-width: 767px) {
-  .blog-carousel {
-    position: relative;
-    overflow: hidden;
-    touch-action: pan-y;
-  }
-
-  .blog-track {
-    display: flex;
-    transition: transform 0.35s ease;
-  }
-
-  .blog-slide {
-    flex: 0 0 100%;
-    width: 100%;
-    padding: 0 4px;
-  }
-
-  /* Punkte-Navigation */
-  .carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 16px;
-  }
-
-  .carousel-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: rgba(0,0,0,0.2);
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    transition: background-color 0.3s ease;
-  }
-
-  .carousel-dot.active {
-    background-color: var(--accent);
-  }
+/* Mobile: Karussell aktiv */
+.blog-carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
-/* Desktop: normale Listenansicht */
+.blog-track {
+  display: flex;
+  flex-wrap: nowrap;
+  transition: transform 0.35s ease;
+  will-change: transform;
+  align-items: flex-start;
+}
+
+.blog-slide {
+  flex: 0 0 100%;
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 0 2px;
+}
+
+/* Punkte-Navigation */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 16px;
+  padding-bottom: 8px;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-dot.active {
+  background-color: var(--accent);
+}
+
+/* Desktop: Karussell deaktivieren */
 @media (min-width: 768px) {
   .blog-carousel {
-    display: block;
+    overflow: visible;
   }
 
   .blog-track {
     display: block;
+    transform: none !important;
+    transition: none;
   }
 
   .blog-slide {
-    display: block;
+    min-width: unset;
+    flex: unset;
     padding: 0;
   }
 

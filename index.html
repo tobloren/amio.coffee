@@ -26,7 +26,7 @@
   <!-- Favicon -->
   <link rel="icon" href="images/amio.coffee.jpg" type="image/jpeg">
 
-  <!-- Bootstrap 5.3.3 (stabile Version) -->
+  <!-- Bootstrap 5.3.3 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
     crossorigin="anonymous" rel="stylesheet">
@@ -34,7 +34,7 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmU/gKlEn5/B3sBsqQAhC9nX69LO"
     crossorigin="anonymous"></script>
 
-  <!-- Google Fonts (nur genutzte Schriften, kein Merriweather) -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
@@ -54,13 +54,11 @@
       <a class="navbar-brand" href="index.html">
         <img src="images/amio.coffee.jpg" alt="amio coffee Logo" width="120" height="100" class="d-inline-block align-text-top">
       </a>
-
       <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item"><a class="nav-link" href="#amio">Home</a></li>
@@ -98,10 +96,12 @@
   <section id="Blog">
     <div class="container-fluid section">
       <h2>Blog</h2>
-      <div id="blog-loading" class="text-center py-4">
-        <p>Loading posts…</p>
+      <div id="blog-loading" class="text-center py-4"><p>Loading posts…</p></div>
+      <!-- Karussell-Wrapper -->
+      <div class="blog-carousel" id="blogCarousel">
+        <div class="blog-track" id="blogTrack"></div>
       </div>
-      <div id="blog"></div>
+      <div class="carousel-dots" id="carouselDots"></div>
     </div>
   </section>
 
@@ -128,8 +128,7 @@
         <div class="container-fluid section">
           <a class="social-media fa-brands fa-instagram"
             href="https://www.instagram.com/tobloren/"
-            target="_blank"
-            rel="noopener noreferrer"
+            target="_blank" rel="noopener noreferrer"
             aria-label="Tobias auf Instagram"></a>
           <a class="social-media fa-solid fa-envelope"
             href="mailto:info@amio.coffee"
@@ -144,72 +143,81 @@
     </div>
   </footer>
 
-  <!-- Blog Script -->
   <script>
+    // ── Karussell-State ──────────────────────────────
+    let currentSlide = 0;
+    let totalSlides  = 0;
+    let touchStartX  = 0;
+
+    // ── Posts laden & rendern ────────────────────────
     fetch("posts.json")
       .then(res => {
-        if (!res.ok) throw new Error("posts.json could not be loaded");
+        if (!res.ok) throw new Error("posts.json not found");
         return res.json();
       })
       .then(posts => {
         document.getElementById("blog-loading").style.display = "none";
-        const container = document.getElementById("blog");
 
-        // Slides HTML bauen
-        const slidesHTML = posts.map(post => {
+        const track = document.getElementById("blogTrack");
+        const dots  = document.getElementById("carouselDots");
+        totalSlides = posts.length;
+
+        posts.forEach((post, index) => {
+          // Intro-Absätze
           const introParagraphs = post.intro
             .split("\n\n")
             .map(p => `<p>${p}</p>`)
             .join("");
 
-          const contentHTML = post.content
-            .map(item => {
-              const contentParagraphs = item.text
-                .split("\n\n")
-                .map(p => `<p>${p}</p>`)
-                .join("");
-              return `
-                <div class="cafe-entry">
-                  <h3>${item.subtitle}</h3>
-                  <img src="${item.image}" alt="${item.imageAlt || item.subtitle}" class="image-blog" loading="lazy">
-                  <div class="blog-text">${contentParagraphs}</div>
-                </div>`;
-            })
-            .join("");
+          // Café-Einträge
+          const contentHTML = post.content.map(item => {
+            const paras = item.text.split("\n\n").map(p => `<p>${p}</p>`).join("");
+            return `
+              <div class="cafe-entry">
+                <h3>${item.subtitle}</h3>
+                <img src="${item.image}" alt="${item.imageAlt || item.subtitle}" class="image-blog" loading="lazy">
+                <div class="blog-text">${paras}</div>
+              </div>`;
+          }).join("");
 
-          return `
-            <div class="blog-slide">
-              <article class="blog-container">
-                <img src="${post.image}" alt="${post.imageAlt || post.title}" class="image-blog" loading="lazy">
-                <h2>${post.title}</h2>
-                <div class="blog-text">${introParagraphs}</div>
-                <button class="btn btn-primary" onclick="togglePost('${post.city}', this)" aria-expanded="false">
-                  Dive in ↓
-                </button>
-                <div id="${post.city}" class="post-content" aria-hidden="true">
-                  ${contentHTML}
-                </div>
-              </article>
-            </div>`;
-        }).join("");
+          // Slide einfügen
+          const slide = document.createElement("div");
+          slide.className = "blog-slide";
+          slide.innerHTML = `
+            <article class="blog-container">
+              <img src="${post.image}" alt="${post.imageAlt || post.title}" class="image-blog" loading="lazy">
+              <h2>${post.title}</h2>
+              <div class="blog-text">${introParagraphs}</div>
+              <button class="btn btn-primary"
+                onclick="togglePost('${post.city}', this)"
+                aria-expanded="false">Dive in ↓</button>
+              <div id="${post.city}" class="post-content" aria-hidden="true">
+                ${contentHTML}
+              </div>
+            </article>`;
+          track.appendChild(slide);
 
-        // Punkte-Navigation bauen
-        const dotsHTML = posts.map((_, i) =>
-          `<button class="carousel-dot ${i === 0 ? 'active' : ''}" onclick="goToSlide(${i})" aria-label="Post ${i + 1}"></button>`
-        ).join("");
+          // Punkt einfügen
+          const dot = document.createElement("button");
+          dot.className = "carousel-dot" + (index === 0 ? " active" : "");
+          dot.setAttribute("aria-label", `Post ${index + 1}`);
+          dot.addEventListener("click", () => goToSlide(index));
+          dots.appendChild(dot);
+        });
 
-        container.innerHTML = `
-          <div class="blog-carousel" id="blogCarousel">
-            <div class="blog-track" id="blogTrack">
-              ${slidesHTML}
-            </div>
-          </div>
-          <div class="carousel-dots" id="carouselDots">
-            ${dotsHTML}
-          </div>`;
+        // Touch-Events am Karussell registrieren
+        const carousel = document.getElementById("blogCarousel");
 
-        // Touch/Swipe-Logik initialisieren
-        initCarousel();
+        carousel.addEventListener("touchstart", e => {
+          touchStartX = e.touches[0].clientX;
+        }, { passive: true });
+
+        carousel.addEventListener("touchend", e => {
+          const diff = touchStartX - e.changedTouches[0].clientX;
+          if (Math.abs(diff) > 40) {
+            goToSlide(diff > 0 ? currentSlide + 1 : currentSlide - 1);
+          }
+        }, { passive: true });
       })
       .catch(err => {
         document.getElementById("blog-loading").innerHTML =
@@ -217,53 +225,16 @@
         console.error(err);
       });
 
-    // Toggle "Dive in" / "Close"
-    function togglePost(id, btn) {
-      const el = document.getElementById(id);
-      const isHidden = el.style.display === "none" || el.style.display === "";
-      el.style.display = isHidden ? "block" : "none";
-      el.setAttribute("aria-hidden", isHidden ? "false" : "true");
-      btn.setAttribute("aria-expanded", isHidden ? "true" : "false");
-      btn.textContent = isHidden ? "Close ↑" : "Dive in ↓";
-    }
-
-    // Karussell-Logik
-    let currentSlide = 0;
-    let totalSlides = 0;
-    let startX = 0;
-    let isDragging = false;
-
-    function initCarousel() {
-      const track = document.getElementById("blogTrack");
-      const carousel = document.getElementById("blogCarousel");
-      totalSlides = track ? track.children.length : 0;
-
-      if (!carousel || totalSlides === 0) return;
-
-      // Touch-Events (Mobile Swipe)
-      carousel.addEventListener("touchstart", e => {
-        startX = e.touches[0].clientX;
-        isDragging = true;
-      }, { passive: true });
-
-      carousel.addEventListener("touchend", e => {
-        if (!isDragging) return;
-        const diff = startX - e.changedTouches[0].clientX;
-        if (Math.abs(diff) > 40) {
-          diff > 0 ? goToSlide(currentSlide + 1) : goToSlide(currentSlide - 1);
-        }
-        isDragging = false;
-      }, { passive: true });
-    }
-
+    // ── Zu Slide springen ────────────────────────────
     function goToSlide(index) {
-      // Nur auf Mobile aktiv — auf Desktop passiert nichts
+      // Auf Desktop nichts tun
       if (window.innerWidth >= 768) return;
-
-      totalSlides = document.getElementById("blogTrack")?.children.length || 0;
+      // Grenzen prüfen
       if (index < 0 || index >= totalSlides) return;
 
       currentSlide = index;
+
+      // Track verschieben
       const track = document.getElementById("blogTrack");
       track.style.transform = `translateX(-${currentSlide * 100}%)`;
 
@@ -271,6 +242,16 @@
       document.querySelectorAll(".carousel-dot").forEach((dot, i) => {
         dot.classList.toggle("active", i === currentSlide);
       });
+    }
+
+    // ── Dive-in Toggle ───────────────────────────────
+    function togglePost(id, btn) {
+      const el = document.getElementById(id);
+      const willOpen = el.style.display === "none" || el.style.display === "";
+      el.style.display = willOpen ? "block" : "none";
+      el.setAttribute("aria-hidden", willOpen ? "false" : "true");
+      btn.setAttribute("aria-expanded", willOpen ? "true" : "false");
+      btn.textContent = willOpen ? "Close ↑" : "Dive in ↓";
     }
   </script>
 
