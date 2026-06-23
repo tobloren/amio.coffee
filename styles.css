@@ -5,6 +5,14 @@
   box-sizing: border-box;
 }
 
+/* Bootstrap setzt body auf #fff — überschreiben damit kein
+   weißer Spalt zwischen Navbar und Hero sichtbar ist */
+body {
+  background-color: var(--mid);
+  margin: 0;
+  padding: 0;
+}
+
 /* ============================
    Farbvariablen
 ============================ */
