@@ -38,9 +38,9 @@
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg custom-nav sticky-top">
-    <div class="container-fluid">
+    <div class="container-fluid px-4">
       <a class="navbar-brand" href="index.html">
-        <img src="images/amio-logo-navbar.svg" alt="amio coffee Logo" width="80" height="80" class="d-inline-block align-text-top">
+        <img src="images/amio-logo-navbar.svg" alt="amio coffee Logo" width="70" height="70" class="d-inline-block">
       </a>
       <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -48,7 +48,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item"><a class="nav-link" href="#amio">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="#Blog">Blog</a></li>
           <li class="nav-item"><a class="nav-link" href="#About">About</a></li>
@@ -67,7 +67,6 @@
             poster="images/coffeetitelpage.jpg"
             aria-label="Coffee beans being roasted">
             <source src="images/hero.mp4" type="video/mp4">
-            <!-- Fallback: Bild wenn Video nicht lädt -->
             <img class="image-hero" src="images/coffeetitelpage.jpg"
               alt="A beautifully crafted coffee in a specialty café">
           </video>
@@ -139,8 +138,6 @@
   </button>
 
   <script>
-    // ── Hilfsfunktionen ──────────────────────────────
-
     function readingTime(post) {
       const allText = [post.intro, ...post.content.map(c => c.text)].join(" ");
       const words = allText.trim().split(/\s+/).length;
@@ -160,7 +157,6 @@
       ).join("");
     }
 
-    // ── Posts laden ──────────────────────────────────
     fetch("posts.json")
       .then(res => {
         if (!res.ok) throw new Error("posts.json not found");
@@ -191,8 +187,6 @@
 
           container.innerHTML += `
             <article class="blog-container">
-
-              <!-- Header: Bild + Titel/Meta nebeneinander auf Desktop -->
               <div class="blog-header">
                 <img src="${post.image}" alt="${post.imageAlt || post.title}" class="image-blog" loading="lazy">
                 <div class="blog-header-text">
@@ -206,24 +200,17 @@
                   </div>
                 </div>
               </div>
-
-              <!-- Intro -->
               <div class="blog-intro">
                 <div class="blog-text">${introParagraphs}</div>
               </div>
-
-              <!-- Button -->
               <div class="blog-actions">
                 <button class="btn btn-primary" onclick="togglePost('${post.city}', this)" aria-expanded="false">
                   Dive in ↓
                 </button>
               </div>
-
-              <!-- Café-Einträge -->
               <div id="${post.city}" class="post-content" aria-hidden="true">
                 ${contentHTML}
               </div>
-
             </article>`;
         });
       })
@@ -233,7 +220,6 @@
         console.error(err);
       });
 
-    // ── Dive-in Toggle ───────────────────────────────
     function togglePost(id, btn) {
       const el = document.getElementById(id);
       const willOpen = el.style.display === "none" || el.style.display === "";
@@ -243,7 +229,6 @@
       btn.textContent = willOpen ? "Close ↑" : "Dive in ↓";
     }
 
-    // ── Back-to-top Button ───────────────────────────
     const btt = document.getElementById("back-to-top");
     window.addEventListener("scroll", () => {
       btt.classList.toggle("visible", window.scrollY > 400);

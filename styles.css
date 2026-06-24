@@ -82,6 +82,9 @@ a {
 .custom-nav {
   background-color: var(--dark);
   margin-bottom: 0;
+  border-bottom: 2px solid var(--accent);
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
 }
 
 .navbar-brand {
@@ -89,18 +92,49 @@ a {
   font-size: 2rem;
   font-weight: 600;
   color: var(--light);
-  transition: color 0.3s ease;
+  transition: opacity 0.3s ease;
+  padding: 0;
 }
 
 .navbar-brand:hover {
-  color: var(--accent);
+  opacity: 0.8;
+}
+
+.navbar-brand img {
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover img {
+  transform: scale(1.05);
 }
 
 .nav-link {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--light) !important;
+  padding: 0.5rem 1.2rem !important;
+  position: relative;
   transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 1.2rem;
+  right: 1.2rem;
+  height: 2px;
+  background-color: var(--accent);
+  transform: scaleX(0);
+  transition: transform 0.25s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
 }
 
 .nav-link:hover {
@@ -158,18 +192,15 @@ a {
 ============================ */
 .image-hero {
   width: 90%;
-  margin: 0 0 2% 0;
+  margin: 0 auto 2%;
   border-radius: 8px;
   aspect-ratio: 16 / 9;
   object-fit: cover;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-/* Video-Hero: gleiche Regeln wie Bild-Hero */
 video.image-hero {
-  background-color: var(--dark); /* Hintergrund während Laden */
+  background-color: var(--dark);
 }
 
 @media (min-width: 768px) {
@@ -260,7 +291,6 @@ video.image-hero {
   margin-top: 1.5rem;
 }
 
-/* Meta-Zeile: Datum + Lesedauer + Tags */
 .blog-meta {
   display: flex;
   flex-wrap: wrap;
