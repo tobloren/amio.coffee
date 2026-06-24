@@ -40,7 +40,7 @@
   <nav class="navbar navbar-expand-lg custom-nav sticky-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html">
-        <img src="images/amio-logo-navbar.svg" alt="amio coffee Logo" width="80" height="80" class="d-inline-block align-text-top">  
+        <img src="images/amio.coffee.jpg" alt="amio coffee Logo" width="120" height="100" class="d-inline-block align-text-top">
       </a>
       <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -63,14 +63,20 @@
       <div class="row">
         <h1>amio coffee – Your coffee travel adventures</h1>
         <div class="feature-box col-12 p-2 p-sm-3 p-md-4">
-          <img class="image-hero" src="images/coffeetitelpage.jpg"
-            alt="A beautifully crafted coffee in a specialty café" loading="lazy">
+          <video class="image-hero" autoplay muted loop playsinline
+            poster="images/coffeetitelpage.jpg"
+            aria-label="Coffee beans being roasted">
+            <source src="images/hero.mp4" type="video/mp4">
+            <!-- Fallback: Bild wenn Video nicht lädt -->
+            <img class="image-hero" src="images/coffeetitelpage.jpg"
+              alt="A beautifully crafted coffee in a specialty café">
+          </video>
         </div>
         <div class="feature-box container-fluid section p-2 p-sm-3 p-md-4">
           <h2>G'day, coffee lovers! ☕️</h2>
-          <p>Welcome to Amio Coffee — your curated guide to exceptional coffee around the world.</p>
+          <p>Welcome to Amio Coffee – your curated guide to exceptional coffee around the world.</p>
           <p>I'm Tobias, a coffee‑driven traveler exploring cafés, roasters, and hidden gems across the globe.</p>
-          <p>Here you'll find carefully researched city guides, honest café reviews, and insights into coffee culture —
+          <p>Here you'll find carefully researched city guides, honest café reviews, and insights into coffee culture –
             all tested, photographed, and written with genuine passion.</p>
           <p>Whether you're planning your next trip or simply looking for your new favorite brew, this is your place to
             discover outstanding coffee experiences.</p>
@@ -244,7 +250,5 @@
     }, { passive: true });
   </script>
 
-<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5b0c82dd983c4ff6bf35821f99d2902a"}'></script><!-- End Cloudflare Web Analytics -->
-  
 </body>
 </html>
