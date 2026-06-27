@@ -82,32 +82,32 @@
   "date": "2025-04-23",
   "country": "Australia",
   "tags": ["australia", "specialty-coffee", "city-guide", "perth"],
-  "image": "images/PerthSkyline.jpg",
+  "image": "images/perthskyline.jpeg",
   "imageAlt": "Perth skyline from the Swan River, Western Australia",
   "excerpt": "Four very different rooms, one obsession. Perth's west coast coffee culture runs deeper than you'd expect – from fermented naturals to industry-cool roasteries and the short mac as a local institution.",
   "intro": "Perth operates on its own frequency. Cut off from the rest of Australia by thousands of kilometres of nothing, the city has developed its own coffee culture – one that takes the short mac seriously, ferments things in red wine, and puts a Probat roaster in the middle of the room like it belongs there.\n\nFour stops. Four very different expressions of what's happening on the west coast.",
   "content": [
     {
       "subtitle": "Coccolicco",
-      "image": "images/coccolicco.jpg",
+      "image": "images/coccolicco.jpeg",
       "imageAlt": "Interior of Coccolicco café in Perth",
       "text": "Three South Korean women run this place, and they run it well. The energy is warm, the detail is considered, and the menu reflects something genuine rather than trend-chasing.\n\nCoccolicco leans into WA café culture without apology – the short mac and long mac are on the board as they should be, served with the kind of confidence that comes from knowing exactly who you're making coffee for.\n\nIt's the sort of place that earns regulars quietly."
     },
     {
       "subtitle": "Offshot",
-      "image": "images/offshot.jpg",
+      "image": "images/offshot.jpeg",
       "imageAlt": "Wine yeast fermented Natcha coffee at Offshot café in Perth",
       "text": "Offshot is where things get interesting. The cup that stopped everything: the Natcha from West Java – a blend of Sigararutang, Linea S 795 and Ateng Super from Mt Pangrango at 1350 masl, processed as a Red Wine Carbonic Maceration over 36 hours.\n\nPrepared using a thermal shock method – the temperature is deliberately dropped mid-extraction, collapsing the brew into something concentrated and structurally unusual. The result lands somewhere between coffee and natural wine: white peach, rose tea, vanilla slice. Fragrant, layered, completely unlike anything else on the trip.\n\nThe kind of cup you don't explain to someone. You just hand it to them."
     },
     {
       "subtitle": "Good Things",
-      "image": "images/goodthings.jpg",
+      "image": "images/goodthings.jpeg",
       "imageAlt": "Busy espresso bar at Good Things café in Perth",
       "text": "Good Things is always moving. The room hums – orders, grinders, conversation – and the coffee keeps pace without breaking down under the pressure.\n\nThe espresso is the thing. And then the flat white, which takes that espresso and does everything right with the milk. Clean, full, properly integrated. No complaints, no caveats.\n\nSome places earn their crowds. Good Things is one of them."
     },
     {
       "subtitle": "Grouch",
-      "image": "images/grouch.jpg",
+      "image": "images/grouch.jpeg",
       "imageAlt": "Probat roaster inside Grouch café in Perth with industrial interior",
       "text": "Grouch commits to the bit. The fit-out is industrial without being self-conscious about it – raw materials, open ceiling, the kind of space that doesn't need decoration because the Probat roaster sitting in the middle of the room is already doing that job.\n\nThe Ethiopia Rachia was on. Sourced from 350+ farmers in the Yirgacheffe, Idido district – ripe cherries delivered to the Gizat washing station, hand-sorted, dried over 15–20 days on raised African beds with careful airflow and daily turning. Stored at 11.5–12% moisture before final sorting by colour, density and screen size.\n\nAll of that work arrives in the cup as something unmistakably fruit-forward – the terroir of Yirgacheffe doing exactly what it's supposed to."
     }
