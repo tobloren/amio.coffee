@@ -82,7 +82,7 @@
   "date": "2025-04-23",
   "country": "Australia",
   "tags": ["australia", "specialty-coffee", "city-guide", "perth"],
-  "image": "images/Perth-Skyline.jpg",
+  "image": "images/PerthSkyline.jpg",
   "imageAlt": "Perth skyline from the Swan River, Western Australia",
   "excerpt": "Four very different rooms, one obsession. Perth's west coast coffee culture runs deeper than you'd expect – from fermented naturals to industry-cool roasteries and the short mac as a local institution.",
   "intro": "Perth operates on its own frequency. Cut off from the rest of Australia by thousands of kilometres of nothing, the city has developed its own coffee culture – one that takes the short mac seriously, ferments things in red wine, and puts a Probat roaster in the middle of the room like it belongs there.\n\nFour stops. Four very different expressions of what's happening on the west coast.",
@@ -101,7 +101,7 @@
     },
     {
       "subtitle": "Good Things",
-      "image": "images/good-things.jpg",
+      "image": "images/goodthings.jpg",
       "imageAlt": "Busy espresso bar at Good Things café in Perth",
       "text": "Good Things is always moving. The room hums – orders, grinders, conversation – and the coffee keeps pace without breaking down under the pressure.\n\nThe espresso is the thing. And then the flat white, which takes that espresso and does everything right with the milk. Clean, full, properly integrated. No complaints, no caveats.\n\nSome places earn their crowds. Good Things is one of them."
     },
