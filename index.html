@@ -162,7 +162,7 @@
         if (!res.ok) throw new Error("posts.json not found");
         return res.json();
       })
-      .then(posts => {
+      .then(posts => { posts.sort((a, b) => new Date(b.date) - new Date(a.date));
         document.getElementById("blog-loading").style.display = "none";
         const container = document.getElementById("blog");
 
